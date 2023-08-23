@@ -65,7 +65,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_cloudwatch_metric_alarm.metric-alarm-down](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
+| [aws_cloudwatch_metric_alarm.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_route53_health_check.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_health_check) | resource |
 | [aws_sns_topic.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) | resource |
 | [aws_sns_topic_subscription.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_subscription) | resource |
@@ -76,6 +76,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_alarm_description"></a> [alarm\_description](#input\_alarm\_description) | Alarm description | `string` | `null` | no |
 | <a name="input_alarm_endpoint"></a> [alarm\_endpoint](#input\_alarm\_endpoint) | Alarm endpoint, this get added as a subcription to SNS | `string` | `""` | no |
+| <a name="input_alarm_endpoint_protocol"></a> [alarm\_endpoint\_protocol](#input\_alarm\_endpoint\_protocol) | Protocol to use. Valid values are: sqs, sms, lambda, firehose, and application. Protocols email, email-json, http and https are also valid but partially supported. See details below. | `string` | `"https"` | no |
 | <a name="input_alarm_prefix"></a> [alarm\_prefix](#input\_alarm\_prefix) | Prefix for Alarm | `string` | n/a | yes |
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | Domain name or ip address of checking service. | `string` | n/a | yes |
 | <a name="input_evaluation_periods"></a> [evaluation\_periods](#input\_evaluation\_periods) | The number of periods over which data is compared to the specified threshold. | `number` | `2` | no |
@@ -93,7 +94,11 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_cloudwatch_alarm_arn"></a> [cloudwatch\_alarm\_arn](#output\_cloudwatch\_alarm\_arn) | Cloudwatch Alarm ARN |
+| <a name="output_route53_health_check_arn"></a> [route53\_health\_check\_arn](#output\_route53\_health\_check\_arn) | Route53 Health check ARN |
+| <a name="output_sns_arn"></a> [sns\_arn](#output\_sns\_arn) | SNS ARN |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Development

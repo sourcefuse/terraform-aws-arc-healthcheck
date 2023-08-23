@@ -19,8 +19,8 @@ module "health_check" {
   alarm_prefix      = "test"
   failure_threshold = 2
   request_interval  = 10
-  search_string     = "Pattern: Health Check API"
-  alarm_endpoint    = "https://api.opsgenie.com/v1/json/cloudwatch?apiKey=75f8c6f7-5655-4a1c-b826-cef87e52e5c9"
+  search_string     = "Health"
+  alarm_endpoint    = "https://api.opsgenie.com/v1/json/cloudwatch?apiKey=4789a75b-20fc-4c9c-ae90-dbc654c0d614"
 
   tags = module.tags.tags
 

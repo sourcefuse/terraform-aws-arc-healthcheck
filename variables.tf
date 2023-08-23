@@ -88,3 +88,9 @@ variable "alarm_endpoint" {
   default     = ""
   description = "Alarm endpoint, this get added as a subcription to SNS"
 }
+
+variable "alarm_endpoint_protocol" {
+  type        = string
+  default     = "https"
+  description = "Protocol to use. Valid values are: sqs, sms, lambda, firehose, and application. Protocols email, email-json, http and https are also valid but partially supported. See details below."
+}

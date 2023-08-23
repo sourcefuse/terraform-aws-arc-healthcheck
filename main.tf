@@ -15,7 +15,7 @@ resource "aws_route53_health_check" "this" {
 }
 
 
-resource "aws_cloudwatch_metric_alarm" "metric-alarm-down" {
+resource "aws_cloudwatch_metric_alarm" "this" {
   alarm_name          = "${var.alarm_prefix}-${var.domain_name}${var.resource_path}"
   namespace           = "AWS/Route53"
   metric_name         = "HealthCheckStatus"
@@ -44,7 +44,7 @@ resource "aws_sns_topic" "this" {
 
 resource "aws_sns_topic_subscription" "this" {
   topic_arn = aws_sns_topic.this.arn
-  protocol  = "https"
+  protocol  = var.alarm_endpoint_protocol
   endpoint  = var.alarm_endpoint
 }
 
