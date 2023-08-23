@@ -19,7 +19,7 @@ module "health_check" {
   alarm_prefix      = "test"
   failure_threshold = 2
   request_interval  = 10
-  search_string     = "Health"
+  search_string     = "Health" // Note:- string with space(eg. "Health API") is not working , it always goes to in-alarm state
   alarm_endpoint    = "https://api.opsgenie.com/v1/json/cloudwatch?apiKey=4789a75b-20fc-4c9c-ae90-dbc654c0d614"
 
   tags = module.tags.tags
