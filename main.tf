@@ -14,7 +14,6 @@ resource "aws_route53_health_check" "this" {
   var.tags)
 }
 
-
 resource "aws_cloudwatch_metric_alarm" "this" {
   alarm_name          = "${var.alarm_prefix}-${var.domain_name}${var.resource_path}"
   namespace           = "AWS/Route53"
@@ -36,10 +35,14 @@ resource "aws_cloudwatch_metric_alarm" "this" {
   depends_on = [
     aws_route53_health_check.this
   ]
+
+  tags = var.tags
 }
 
 resource "aws_sns_topic" "this" {
-  name = var.alarm_prefix
+  name              = var.alarm_prefix
+  kms_master_key_id = var.kms_id
+  tags              = var.tags
 }
 
 resource "aws_sns_topic_subscription" "this" {

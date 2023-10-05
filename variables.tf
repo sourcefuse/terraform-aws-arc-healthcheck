@@ -95,3 +95,10 @@ variable "alarm_endpoint_protocol" {
   default     = "https"
   description = "Protocol to use. Valid values are: sqs, sms, lambda, firehose, and application. Protocols email, email-json, http and https are also valid but partially supported. See details below."
 }
+
+variable "kms_id" {
+  type    = string
+  default = null
+  // if AWS managed key is used then Cloudwatch cannot decrypt SNS data, Failed to execute action arn:aws:sns:ap-southeast-2:***:prod. Received error: "CloudWatch Alarms does not have authorization to access the SNS topic encryption key."
+  description = "KMS id to encrpyt SNS, note : AWS managed keys doesn't work"
+}
