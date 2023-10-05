@@ -1,5 +1,5 @@
 ---
-site_name: terraform-aws-refarch-cloudfront
-site_description: Terraform CloudFront module.
+site_name: terraform-aws-refarch-healthcheck
+site_description: Terraform healthcheck module.
 plugins:
   - techdocs-core
