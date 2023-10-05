@@ -1,6 +1,6 @@
-# [terraform-aws-refarch-cloudfront](https://github.com/sourcefuse/terraform-aws-refarch-healthcheck)
+# [terraform-aws-refarch-healthcheck](https://github.com/sourcefuse/terraform-aws-refarch-healthcheck)
 
-[![Known Vulnerabilities](https://github.com/sourcefuse/terraform-aws-refarch-healthcheck/actions/workflows/snyk.yaml/badge.svg)](https://github.com/sourcefuse/terraform-aws-refarch-cloudfront/actions/workflows/snyk.yaml)
+[![Known Vulnerabilities](https://github.com/sourcefuse/terraform-aws-refarch-healthcheck/actions/workflows/snyk.yaml/badge.svg)](https://github.com/sourcefuse/terraform-aws-refarch-healthcheck/actions/workflows/snyk.yaml)
 
 ## Overview
 
@@ -18,7 +18,7 @@ module "tags" {
   project     = "test"
 
   extra_tags = {
-    RepoName = "terraform-aws-refarch-cloudfront"
+    RepoName = "terraform-aws-refarch-healthcheck"
   }
 }
 
@@ -88,7 +88,7 @@ No modules.
 | <a name="input_request_interval"></a> [request\_interval](#input\_request\_interval) | The number of seconds between the time that Amazon Route 53 gets a response from your endpoint and the time that it sends the next health-check request. | `number` | n/a | yes |
 | <a name="input_resource_path"></a> [resource\_path](#input\_resource\_path) | Resource path eg. /health | `string` | `""` | no |
 | <a name="input_search_string"></a> [search\_string](#input\_search\_string) | String searched in the first 5120 bytes of the response body for check to be considered healthy. Only valid with HTTP\_STR\_MATCH and HTTPS\_STR\_MATCH | `string` | `null` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | Tags object. | `map` | `{}` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags object. | `map(string)` | `{}` | no |
 | <a name="input_threshold"></a> [threshold](#input\_threshold) | The value against which the specified statistic is compared. This parameter is required for alarms based on static thresholds, but should not be used for alarms based on anomaly detection models. | `number` | `1` | no |
 | <a name="input_type"></a> [type](#input\_type) | Type of health check. eg. HTTPS\_STR\_MATCH, HTTPS, HTTP | `string` | `"HTTPS"` | no |
 
@@ -135,7 +135,7 @@ By specifying this , it will bump the version and if you dont specify this in yo
 
 ```sh
 cd test
-go mod init github.com/sourcefuse/terraform-aws-refarch-cloudfront
+go mod init github.com/sourcefuse/terraform-aws-refarch-healthcheck
 go get github.com/gruntwork-io/terratest/modules/terraform
 ```
 

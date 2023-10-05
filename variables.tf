@@ -1,4 +1,5 @@
 variable "tags" {
+  type        = map(string)
   default     = {}
   description = "Tags object."
 }
