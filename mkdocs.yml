@@ -1,0 +1,5 @@
+---
+site_name: terraform-aws-refarch-healthcheck
+site_description: Terraform healthcheck module.
+plugins:
+  - techdocs-core
