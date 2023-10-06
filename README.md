@@ -12,7 +12,8 @@ To see a full example, check out the [main.tf](./example/main.tf) file in the ex
 ``` hcl
 
 module "tags" {
-  source = "git::https://github.com/sourcefuse/terraform-aws-refarch-tags?ref=1.1.0"
+  source  = "sourcefuse/arc-tags/aws"
+  version = "1.2.3"
 
   environment = "dev"
   project     = "test"
