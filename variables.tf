@@ -29,11 +29,11 @@ variable "routing_control_arn" {
   default     = ""
   description = "The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control. This is used when health check type is RECOVERY_CONTROL"
 }
-variable "insufficient_data_health_status" {
-  type        = string
-  default     = ""
-  description = "The status of the health check when CloudWatch has insufficient data about the state of associated alarm. Valid values are Healthy , Unhealthy and LastKnownStatus."
-}
+# variable "insufficient_data_health_status" {
+#   type        = string
+#   default     = ""
+#   description = "The status of the health check when CloudWatch has insufficient data about the state of associated alarm. Valid values are Healthy , Unhealthy and LastKnownStatus."
+# }
 variable "invert_healthcheck" {
   type        = bool
   default     = false
