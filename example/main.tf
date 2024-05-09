@@ -2,11 +2,11 @@
 ## defaults
 ################################################################################
 terraform {
-  required_version = "~> 1.4"
+  required_version = "~> 1.7"
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.0"
+      version = "~> 5.0"
     }
   }
 }
@@ -31,8 +31,8 @@ module "tags" {
 
 
 module "health_check" {
-  source  = "sourcefuse/arc-healthcheck/aws"
-  version = "0.0.3"
+  source = "../"
+  # version = "0.0.3"
 
   name              = var.name
   domain_name       = var.domain_name
