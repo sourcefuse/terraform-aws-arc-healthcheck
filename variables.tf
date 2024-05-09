@@ -31,7 +31,7 @@ variable "routing_control_arn" {
 }
 variable "insufficient_data_health_status" {
   type        = string
-  default     = "Healthy"
+  default     = ""
   description = "The status of the health check when CloudWatch has insufficient data about the state of associated alarm. Valid values are Healthy , Unhealthy and LastKnownStatus."
 }
 variable "invert_healthcheck" {
