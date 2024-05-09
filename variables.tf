@@ -19,7 +19,26 @@ variable "resource_path" {
   default     = ""
   description = "Resource path eg. /health"
 }
-
+variable "regions" {
+  type        = list(string)
+  default     = ["us-east-1", "us-west-2", "us-west-1"] // minimum 3 regions are required as per aws . valid regions are ["us-east-1" "us-west-1" "us-west-2" "eu-west-1" "ap-southeast-1" "ap-southeast-2" "ap-northeast-1" "sa-east-1"]
+  description = "A list of AWS regions that you want Amazon Route 53 health checkers to check the specified endpoint from."
+}
+variable "routing_control_arn" {
+  type        = string
+  default     = ""
+  description = "The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control. This is used when health check type is RECOVERY_CONTROL"
+}
+variable "insufficient_data_health_status" {
+  type        = string
+  default     = "Healthy"
+  description = "The status of the health check when CloudWatch has insufficient data about the state of associated alarm. Valid values are Healthy , Unhealthy and LastKnownStatus."
+}
+variable "invert_healthcheck" {
+  type        = bool
+  default     = false
+  description = "A boolean value that indicates whether the status of health check should be inverted. For example, if a health check is healthy but Inverted is True , then Route 53 considers the health check to be unhealthy."
+}
 variable "port" {
   type        = number
   default     = 443
