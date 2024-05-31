@@ -171,7 +171,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_cloudwatch_metric_alarm.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
+| [aws_cloudwatch_metric_alarm.alarm_breaching](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
+| [aws_cloudwatch_metric_alarm.alarm_ok](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
 | [aws_route53_health_check.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_health_check) | resource |
 | [aws_sns_topic.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) | resource |
 | [aws_sns_topic_subscription.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_subscription) | resource |
@@ -191,6 +192,7 @@ No modules.
 | <a name="input_kms_id"></a> [kms\_id](#input\_kms\_id) | KMS id to encrpyt SNS, note : AWS managed keys doesn't work | `string` | `null` | no |
 | <a name="input_measure_latency"></a> [measure\_latency](#input\_measure\_latency) | Indicates whether you want Route 53 to measure the latency between health checkers in multiple AWS regions and your endpoint and to display CloudWatch latency graphs in the Route 53 console. | `string` | `false` | no |
 | <a name="input_name"></a> [name](#input\_name) | Health check name | `string` | n/a | yes |
+| <a name="input_ok_alarm_description"></a> [ok\_alarm\_description](#input\_ok\_alarm\_description) | OK Alarm description | `string` | `null` | no |
 | <a name="input_period"></a> [period](#input\_period) | The period in seconds over which the specified statistic is applied. Valid values are 10, 30, or any multiple of 60 | `number` | `10` | no |
 | <a name="input_port"></a> [port](#input\_port) | Port number of checking service. | `number` | `443` | no |
 | <a name="input_regions"></a> [regions](#input\_regions) | A list of AWS regions that you want Amazon Route 53 health checkers to check the specified endpoint from. | `list(string)` | <pre>[<br>  "us-east-1",<br>  "us-west-2",<br>  "us-west-1"<br>]</pre> | no |

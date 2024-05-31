@@ -102,7 +102,11 @@ variable "alarm_description" {
   default     = null
   description = "Alarm description"
 }
-
+variable "ok_alarm_description" {
+  type        = string
+  default     = null
+  description = "OK Alarm description"
+}
 variable "alarm_endpoint" {
   type        = string
   default     = ""
