@@ -85,13 +85,13 @@ variable "evaluation_periods" {
   description = "The number of periods over which data is compared to the specified threshold."
 }
 variable "comparison_operator" {
-  type = string
-  default = "LessThanOrEqualToThreshold"
+  type        = string
+  default     = "LessThanOrEqualToThreshold"
   description = "Specifies the arithmetic operation to use when comparing the specified statistic and threshold. The value should indicate the condition under which the alarm is triggered, such as 'GreaterThanThreshold', 'LessThanThreshold', 'GreaterThanOrEqualToThreshold', or 'LessThanOrEqualToThreshold'."
 }
 variable "statistic" {
-  type = string
-  default = "Average"
+  type        = string
+  default     = "Average"
   description = "Specifies the metric statistic to use for the alarm. Common options include 'Average', 'Sum', 'SampleCount', 'Minimum', and 'Maximum'. This determines how the metric data points are aggregated over the specified period."
 }
 variable "period" {
