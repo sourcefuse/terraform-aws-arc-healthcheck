@@ -21,10 +21,10 @@ resource "aws_cloudwatch_metric_alarm" "alarm_breaching" {
   alarm_name          = "${var.alarm_prefix}-${var.domain_name}${var.resource_path}-Breaching"
   namespace           = "AWS/Route53"
   metric_name         = "HealthCheckStatus"
-  comparison_operator = "LessThanOrEqualToThreshold"
+  comparison_operator = var.comparison_operator
   evaluation_periods  = var.evaluation_periods
   period              = var.period
-  statistic           = "Average"
+  statistic           = var.statistic
   threshold           = var.threshold
   unit                = "None"
   dimensions = {
@@ -40,7 +40,8 @@ resource "aws_cloudwatch_metric_alarm" "alarm_breaching" {
   tags = var.tags
 }
 
-resource "aws_cloudwatch_metric_alarm" "alarm_ok" {
+resource "aws_cloudwatch_metric_alarm" "ok" {
+  count               = var.enable_alarm ? 1 : 0
   alarm_name          = "${var.alarm_prefix}-${var.domain_name}${var.resource_path}-OK"
   namespace           = "AWS/Route53"
   metric_name         = "HealthCheckStatus"

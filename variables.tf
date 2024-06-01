@@ -84,7 +84,16 @@ variable "evaluation_periods" {
   default     = 2
   description = "The number of periods over which data is compared to the specified threshold."
 }
-
+variable "comparison_operator" {
+  type = string
+  default = "LessThanOrEqualToThreshold"
+  description = "Specifies the arithmetic operation to use when comparing the specified statistic and threshold. The value should indicate the condition under which the alarm is triggered, such as 'GreaterThanThreshold', 'LessThanThreshold', 'GreaterThanOrEqualToThreshold', or 'LessThanOrEqualToThreshold'."
+}
+variable "statistic" {
+  type = string
+  default = "Average"
+  description = "Specifies the metric statistic to use for the alarm. Common options include 'Average', 'Sum', 'SampleCount', 'Minimum', and 'Maximum'. This determines how the metric data points are aggregated over the specified period."
+}
 variable "period" {
   type        = number
   default     = 10
@@ -124,4 +133,9 @@ variable "kms_id" {
   default = null
   // if AWS managed key is used then Cloudwatch cannot decrypt SNS data, Failed to execute action arn:aws:sns:ap-southeast-2:***:prod. Received error: "CloudWatch Alarms does not have authorization to access the SNS topic encryption key."
   description = "KMS id to encrpyt SNS, note : AWS managed keys doesn't work"
+}
+variable "enable_alarm" {
+  type        = bool
+  default     = false
+  description = "Flag to enable or disable the CloudWatch metric alarm."
 }
