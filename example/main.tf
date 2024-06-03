@@ -31,9 +31,8 @@ module "tags" {
 
 
 module "health_check" {
-  source = "sourcefuse/arc-healthcheck/aws"
-  # version = "0.0.3"
-
+  source            = "sourcefuse/arc-healthcheck/aws"
+  version           = "0.0.8"
   name              = var.name
   domain_name       = var.domain_name
   resource_path     = var.resource_path

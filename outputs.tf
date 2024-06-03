@@ -4,7 +4,7 @@ output "sns_arn" {
 }
 
 output "cloudwatch_alarm_arn" {
-  value       = aws_cloudwatch_metric_alarm.this.arn
+  value       = var.enable_alarm ? aws_cloudwatch_metric_alarm.ok[0].arn : ""
   description = "Cloudwatch Alarm ARN"
 }
 
