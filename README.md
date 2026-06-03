@@ -16,6 +16,7 @@
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=sourcefuse_terraform-aws-arc-healthcheck)](https://sonarcloud.io/summary/new_code?id=sourcefuse_terraform-aws-arc-healthcheck)
+
 ## Overview
 
 Creates Route53 health checks with CloudWatch alarms and SNS notifications for endpoint availability monitoring.
